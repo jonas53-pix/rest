@@ -28,7 +28,7 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                Contact RestoManage
+                Contact TastyBite
               </h1>
               <p className="text-xl text-gray-600">
                 We'd love to hear from you. Send a message, call us, or stop by the riverside.
@@ -178,8 +178,8 @@ const ContactPage = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-gray-400" />
-                  <a href="mailto:hello@restomanage.com" className="text-blue-600 hover:text-blue-500">
-                    hello@restomanage.com
+                  <a href="mailto:TastyBite@gmail.com" className="text-blue-600 hover:text-blue-500">
+                    TastyBite@gmail.com
                   </a>
                 </div>
               </div>
@@ -199,7 +199,7 @@ const ContactPage = () => {
               
               <img
                 src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                alt="Map of RestoManage location"
+                alt="Map of TastyBite location"
                 className="w-full h-64 object-cover"
               />
               

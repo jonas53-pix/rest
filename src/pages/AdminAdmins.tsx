@@ -24,7 +24,7 @@ const AdminAdmins = () => {
   const admins = [
     {
       name: 'Alex Morgan',
-      email: 'alex@restomanage.com',
+      email: 'alex@TastyBite.com',
       role: 'Super Admin',
       lastActive: 'Today, 09:24',
       status: 'active',
@@ -32,7 +32,7 @@ const AdminAdmins = () => {
     },
     {
       name: 'Jamie Lee',
-      email: 'jamie@restomanage.com',
+      email: 'jamie@TastyBite.com',
       role: 'Manager',
       lastActive: 'Yesterday',
       status: 'active',
@@ -40,7 +40,7 @@ const AdminAdmins = () => {
     },
     {
       name: 'Taylor Brooks',
-      email: 'taylor@restomanage.com',
+      email: 'taylor@TastyBite.com',
       role: 'Shift Lead',
       lastActive: '2d ago',
       status: 'active',
@@ -48,7 +48,7 @@ const AdminAdmins = () => {
     },
     {
       name: 'Sam Carter',
-      email: 'sam@restomanage.com',
+      email: 'sam@TastyBite.com',
       role: 'Staff',
       lastActive: 'Online',
       status: 'active',
@@ -56,7 +56,7 @@ const AdminAdmins = () => {
     },
     {
       name: 'Ava Patel',
-      email: 'ava@restomanage.com',
+      email: 'ava@TastyBite.com',
       role: 'Staff',
       lastActive: '1w ago',
       status: 'deactivated',

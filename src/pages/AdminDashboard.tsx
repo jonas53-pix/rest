@@ -40,10 +40,10 @@ const AdminDashboard = () => {
   ];
 
   const recentOrders = [
-    { id: '#1234', customer: 'John Doe', total: '$45.50', status: 'Preparing', statusColor: 'bg-yellow-100 text-yellow-800' },
-    { id: '#1235', customer: 'Jane Smith', total: '$32.00', status: 'Delivered', statusColor: 'bg-green-100 text-green-800' },
-    { id: '#1236', customer: 'Mike Johnson', total: '$67.25', status: 'Pending', statusColor: 'bg-gray-100 text-gray-800' },
-    { id: '#1237', customer: 'Sarah Wilson', total: '$28.75', status: 'Preparing', statusColor: 'bg-yellow-100 text-yellow-800' }
+    { id: '#1234', customer: 'John Doe', total: 'GH₵45.50', status: 'Preparing', statusColor: 'bg-yellow-100 text-yellow-800' },
+    { id: '#1235', customer: 'Jane Smith', total: 'GH₵32.00', status: 'Delivered', statusColor: 'bg-green-100 text-green-800' },
+    { id: '#1236', customer: 'Mike Johnson', total: 'GH₵67.25', status: 'Pending', statusColor: 'bg-gray-100 text-gray-800' },
+    { id: '#1237', customer: 'Sarah Wilson', total: 'GH₵28.75', status: 'Preparing', statusColor: 'bg-yellow-100 text-yellow-800' }
   ];
 
   const reservations = [
@@ -53,9 +53,9 @@ const AdminDashboard = () => {
   ];
 
   const admins = [
-    { name: 'Alex Morgan', email: 'alex@restomanage.com', role: 'Super Admin', avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-    { name: 'Jamie Lee', email: 'jamie@restomanage.com', role: 'Manager', avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-    { name: 'Taylor Brooks', email: 'taylor@restomanage.com', role: 'Staff', avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' }
+    { name: 'Alex Morgan', email: 'alex@TastyBite.com', role: 'Super Admin', avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
+    { name: 'Jamie Lee', email: 'jamie@TastyBite.com', role: 'Manager', avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
+    { name: 'Taylor Brooks', email: 'taylor@TastyBite.com', role: 'Staff', avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' }
   ];
 
   return (

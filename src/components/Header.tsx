@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Phone, User, LogOut, Settings, Sun } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, setLogoutCallback } = useAuth();
   const { getItemCount } = useCart();
+  const navigate = useNavigate();
   const location = useLocation();
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+
+  // Set up logout callback to redirect to home page
+  useEffect(() => {
+    setLogoutCallback(() => () => navigate('/'));
+  }, [setLogoutCallback, navigate]);
 
   const isActivePage = (path: string) => location.pathname === path;
 
@@ -24,9 +30,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R</span>
+              <span className="text-white font-bold text-lg">TB</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">RestoManage</span>
+            <span className="text-xl font-bold text-gray-900">TastyBite</span>
           </Link>
 
           {/* Navigation */}

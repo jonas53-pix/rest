@@ -76,7 +76,7 @@ const SignUpPage = () => {
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">R</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">RestoManage</span>
+              <span className="text-xl font-bold text-gray-900">TastyBite</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">Create your account</h1>
             <p className="text-gray-600">Join to make reservations, manage orders, and track favorites.</p>

@@ -309,7 +309,7 @@ const CheckoutPage = () => {
                   </div>
                   <div className="text-right">
                     <div className="font-medium text-gray-900">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      GH₵{(item.price * item.quantity).toFixed(2)}
                     </div>
                     <button
                       onClick={() => removeFromCart(item.id)}
@@ -326,23 +326,23 @@ const CheckoutPage = () => {
             <div className="space-y-3 border-t border-gray-200 pt-4">
               <div className="flex justify-between text-gray-600">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>GH₵{subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Delivery</span>
-                <span>${delivery.toFixed(2)}</span>
+                <span>GH₵{delivery.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Tax</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>GH₵{tax.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-green-600">
                 <span>Promo code RIVERSIDE applied</span>
-                <span>-${promoDiscount.toFixed(2)}</span>
+                <span>-GH₵{promoDiscount.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-xl font-bold text-gray-900 border-t pt-3">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>GH₵{total.toFixed(2)}</span>
               </div>
             </div>
 
@@ -351,7 +351,7 @@ const CheckoutPage = () => {
               onClick={handlePayment}
               className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6 text-lg"
             >
-              Pay ${total.toFixed(2)}
+                              Pay GH₵{total.toFixed(2)}
             </button>
 
             {/* Add Promo Code */}

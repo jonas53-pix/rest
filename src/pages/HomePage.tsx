@@ -29,34 +29,34 @@ const HomePage = () => {
   const popularDishes = [
     {
       name: 'Classic Burger',
-      price: '$18',
+      price: 'GH₵18',
       image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Margarita Pizza',
-      price: '$22',
+      price: 'GH₵22',
       image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Green Salad',
-      price: '$14',
+      price: 'GH₵14',
       image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     }
   ];
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
+      name: 'Doris Pousah',
       text: 'Amazing food and exceptional service. The online ordering system makes it so convenient!',
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     },
     {
-      name: 'Mike Chen',
+      name: 'Emmanuel Anabilla',
       text: 'Best restaurant in town. Fresh ingredients and perfect flavors every time.',
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     },
     {
-      name: 'Emily Davis',
+      name: 'Janet Ansah',
       text: 'The reservation system is fantastic. Always get our favorite table by the window.',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     }
@@ -196,7 +196,7 @@ const HomePage = () => {
                 About Our Restaurant
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Since 2012, RestoManage has been serving the finest locally-sourced, 
+                Since 2012, TastyBite has been serving the finest locally-sourced, 
                 seasonally-inspired cuisine in a warm and welcoming atmosphere. Our 
                 commitment to quality ingredients, exceptional service, and innovative 
                 flavors has made us a beloved destination for food lovers.

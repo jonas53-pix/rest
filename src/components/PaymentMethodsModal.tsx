@@ -63,7 +63,7 @@ const PaymentMethodsModal: React.FC<PaymentMethodsModalProps> = ({ isOpen, onClo
           <div className="flex-1">
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">Payment Methods</h2>
             <p className="text-gray-600">
-              Choose or add a payment method for orders and reservations. Your currency is USD ($).
+              Choose or add a payment method for orders and reservations. Your currency is GHS (GH₵).
             </p>
           </div>
           <div className="flex items-center space-x-4">

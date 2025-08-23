@@ -28,31 +28,31 @@ const AdminCategories = () => {
     {
       id: 'DISH-001',
       name: 'Ribeye Steak 10oz',
-      price: '$32.00',
+      price: 'GH₵32.00',
       status: 'Active'
     },
     {
       id: 'DISH-002',
       name: 'Atlantic Salmon Fillet',
-      price: '$28.00',
+      price: 'GH₵28.00',
       status: 'Active'
     },
     {
       id: 'DISH-003',
       name: 'Grilled Chicken Breast',
-      price: '$24.00',
+      price: 'GH₵24.00',
       status: 'Active'
     },
     {
       id: 'DISH-004',
       name: 'Lamb Chops',
-      price: '$36.00',
+      price: 'GH₵36.00',
       status: 'Hidden'
     },
     {
       id: 'DISH-005',
       name: 'Vegetarian Pasta',
-      price: '$18.00',
+      price: 'GH₵18.00',
       status: 'Active'
     }
   ];

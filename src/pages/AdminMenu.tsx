@@ -24,7 +24,7 @@ const AdminMenu = () => {
       name: 'Ribeye Steak 10oz',
       sku: 'RIB-001',
       category: 'Mains',
-      price: '$32.00',
+      price: 'GH₵32.00',
       status: 'Active',
       tags: ['Meat', 'Gluten Free'],
       image: 'https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
@@ -34,7 +34,7 @@ const AdminMenu = () => {
       name: 'Atlantic Salmon Fillet',
       sku: 'SAL-002',
       category: 'Mains',
-      price: '$28.00',
+      price: 'GH₵28.00',
       status: 'Active',
       tags: ['Seafood', 'Gluten Free'],
       image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
@@ -44,7 +44,7 @@ const AdminMenu = () => {
       name: 'Caesar Salad',
       sku: 'SAL-003',
       category: 'Starters',
-      price: '$14.00',
+      price: 'GH₵14.00',
       status: 'Active',
       tags: ['Vegetarian'],
       image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
@@ -54,7 +54,7 @@ const AdminMenu = () => {
       name: 'Margherita Pizza',
       sku: 'PIZ-004',
       category: 'Mains',
-      price: '$18.00',
+      price: 'GH₵18.00',
       status: 'Hidden',
       tags: ['Vegetarian'],
       image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
@@ -64,7 +64,7 @@ const AdminMenu = () => {
       name: 'Chocolate Brownie',
       sku: 'DES-005',
       category: 'Desserts',
-      price: '$9.00',
+      price: 'GH₵9.00',
       status: 'Active',
       tags: ['Vegetarian'],
       image: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
@@ -298,7 +298,7 @@ const AdminMenu = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">$16.40</div>
+                    <div className="text-2xl font-bold text-blue-600">GH₵16.40</div>
                     <div className="text-sm text-gray-600">Avg. Price</div>
                   </div>
                   <div className="text-center p-3 bg-purple-50 rounded-lg">

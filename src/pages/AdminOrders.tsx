@@ -16,8 +16,8 @@ const AdminOrders = () => {
   
   const metrics = [
     { title: 'Total Orders', value: '128', color: 'text-blue-600' },
-    { title: 'Revenue', value: '$3,842', color: 'text-green-600' },
-    { title: 'Avg. Ticket', value: '$30.02', color: 'text-purple-600' },
+    { title: 'Revenue', value: 'GH₵3,842', color: 'text-green-600' },
+    { title: 'Avg. Ticket', value: 'GH₵30.02', color: 'text-purple-600' },
     { title: 'Open Orders', value: '17', color: 'text-orange-600' }
   ];
 
@@ -28,7 +28,7 @@ const AdminOrders = () => {
       type: 'Dine-in',
       status: 'Paid',
       statusColor: 'bg-green-100 text-green-800',
-      total: '$56.40'
+      total: 'GH₵56.40'
     },
     {
       id: '#1235',
@@ -36,7 +36,7 @@ const AdminOrders = () => {
       type: 'Pickup',
       status: 'Preparing',
       statusColor: 'bg-yellow-100 text-yellow-800',
-      total: '$32.00'
+      total: 'GH₵32.00'
     },
     {
       id: '#1236',
@@ -44,7 +44,7 @@ const AdminOrders = () => {
       type: 'Delivery',
       status: 'Unpaid',
       statusColor: 'bg-red-100 text-red-800',
-      total: '$67.25'
+      total: 'GH₵67.25'
     },
     {
       id: '#1237',
@@ -52,7 +52,7 @@ const AdminOrders = () => {
       type: 'Dine-in',
       status: 'Cancelled',
       statusColor: 'bg-gray-100 text-gray-800',
-      total: '$28.75'
+      total: 'GH₵28.75'
     },
     {
       id: '#1238',
@@ -60,7 +60,7 @@ const AdminOrders = () => {
       type: 'Pickup',
       status: 'Ready',
       statusColor: 'bg-blue-100 text-blue-800',
-      total: '$45.50'
+      total: 'GH₵45.50'
     }
   ];
 

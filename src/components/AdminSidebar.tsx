@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   ShoppingCart, 
@@ -10,8 +10,7 @@ import {
   Settings, 
   ChevronDown,
   ChevronRight,
-  LogOut,
-  User
+  LogOut
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -20,9 +19,15 @@ interface AdminSidebarProps {
 }
 
 const AdminSidebar: React.FC<AdminSidebarProps> = ({ isExpanded = true }) => {
-  const { user, logout } = useAuth();
+  const { user, logout, setLogoutCallback } = useAuth();
+  const navigate = useNavigate();
   const location = useLocation();
   const [expandedSections, setExpandedSections] = React.useState<string[]>(['management', 'site-settings']);
+
+  // Set up logout callback to redirect to sign-in page
+  React.useEffect(() => {
+    setLogoutCallback(() => () => navigate('/login'));
+  }, [setLogoutCallback, navigate]);
 
   const isActivePage = (path: string) => location.pathname === path;
 

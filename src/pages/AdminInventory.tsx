@@ -27,7 +27,7 @@ const AdminInventory = () => {
       status: 'In Stock',
       onHand: 45,
       parLevel: 20,
-      unitCost: '$12.50',
+      unitCost: 'GH₵12.50',
       stockLevel: 'high'
     },
     {
@@ -41,7 +41,7 @@ const AdminInventory = () => {
       status: 'Low',
       onHand: 8,
       parLevel: 15,
-      unitCost: '$8.75',
+      unitCost: 'GH₵8.75',
       stockLevel: 'low'
     },
     {
@@ -55,7 +55,7 @@ const AdminInventory = () => {
       status: 'In Stock',
       onHand: 12,
       parLevel: 5,
-      unitCost: '$18.00',
+      unitCost: 'GH₵18.00',
       stockLevel: 'high'
     },
     {
@@ -69,7 +69,7 @@ const AdminInventory = () => {
       status: 'Out',
       onHand: 0,
       parLevel: 10,
-      unitCost: '$3.25',
+      unitCost: 'GH₵3.25',
       stockLevel: 'out'
     },
     {
@@ -83,7 +83,7 @@ const AdminInventory = () => {
       status: 'In Stock',
       onHand: 24,
       parLevel: 8,
-      unitCost: '$15.50',
+      unitCost: 'GH₵15.50',
       stockLevel: 'high'
     }
   ];
@@ -298,7 +298,7 @@ const AdminInventory = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Inventory Overview</h3>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">$12,480</div>
+                    <div className="text-2xl font-bold text-blue-600">GH₵12,480</div>
                     <div className="text-sm text-gray-600">On Hand Value</div>
                   </div>
                   <div className="text-center p-3 bg-orange-50 rounded-lg">

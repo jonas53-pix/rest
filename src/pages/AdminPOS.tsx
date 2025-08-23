@@ -188,7 +188,7 @@ const AdminPOS = () => {
                     <div className="p-4">
                       <h3 className="font-semibold text-gray-900 mb-1">{item.name}</h3>
                       <p className="text-sm text-gray-600 mb-2">{item.description}</p>
-                      <div className="text-lg font-bold text-blue-600">${item.price}</div>
+                      <div className="text-lg font-bold text-blue-600">GH₵{item.price}</div>
                     </div>
                   </div>
                 ))}
@@ -227,7 +227,7 @@ const AdminPOS = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-medium text-gray-900">${item.total}</div>
+                      <div className="font-medium text-gray-900">GH₵{item.total}</div>
                     </div>
                   </div>
                 ))}
@@ -237,19 +237,19 @@ const AdminPOS = () => {
               <div className="space-y-2 mb-6 border-t pt-4">
                 <div className="flex justify-between text-gray-600">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>GH₵{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Tax</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>GH₵{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Service charge</span>
-                  <span>${serviceCharge.toFixed(2)}</span>
+                  <span>GH₵{serviceCharge.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-xl font-bold text-gray-900 border-t pt-2">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>GH₵{total.toFixed(2)}</span>
                 </div>
               </div>
 

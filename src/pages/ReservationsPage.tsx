@@ -179,7 +179,7 @@ const ReservationsPage = () => {
             {/* Location */}
             <div className="bg-white rounded-lg shadow-sm p-6">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">RestoManage</h3>
+                <h3 className="text-lg font-semibold text-gray-900">TastyBite</h3>
                 <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
                   Open today
                 </span>
@@ -228,7 +228,7 @@ const ReservationsPage = () => {
                 <div className="border-t pt-3">
                   <div className="flex justify-between">
                     <span>Deposit:</span>
-                    <span className="font-medium">$10</span>
+                    <span className="font-medium">GH₵10</span>
                   </div>
                 </div>
               </div>

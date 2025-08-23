@@ -11,9 +11,9 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-3">
               <p className="text-gray-300">
-                <span className="block">Email: hello@restomanage.com</span>
-                <span className="block">Phone: (555) 123-4567</span>
-                <span className="block">Address: 123 Riverside Ave, Cityville</span>
+                <span className="block">Email: TastyBite@gmail.com</span>
+                <span className="block">0533458268</span>
+                <span className="block">Tesano-Accra</span>
               </p>
             </div>
           </div>
@@ -41,18 +41,18 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">R</span>
+                <span className="text-white font-bold text-lg">TB</span>
               </div>
-              <span className="text-xl font-bold">RestoManage</span>
+              <span className="text-xl font-bold">TastyBite</span>
             </div>
             <p className="text-gray-300 mb-2">Open daily 11am – 10pm</p>
-            <p className="text-gray-300">@restomanage</p>
+            <p className="text-gray-300">@TastyBite</p>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 RestoManage. All rights reserved.
+            © 2025 TastyBite. All rights reserved.
           </p>
           <Link
             to="/terms"

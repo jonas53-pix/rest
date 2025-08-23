@@ -26,19 +26,19 @@ const AdminReservations = () => {
 
   const upcomingReservations = [
     {
-      name: 'Sarah Johnson',
+      name: 'Doris Pousah',
       time: '7:00 PM',
       party: '4 people',
       avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop'
     },
     {
-      name: 'Mike Chen',
+      name: 'Emmanuel Anabilla',
       time: '7:30 PM',
       party: '2 people',
       avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop'
     },
     {
-      name: 'Emily Davis',
+      name: 'Janet Ansah',
       time: '8:00 PM',
       party: '6 people',
       avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop'

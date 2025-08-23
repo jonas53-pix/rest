@@ -164,9 +164,9 @@ const MenuPage = () => {
                       {item.description}
                     </p>
                     <div className="flex justify-between items-center">
-                      <span className="text-xl font-bold text-blue-600">
-                        ${item.price}
-                      </span>
+                                             <span className="text-xl font-bold text-blue-600">
+                         GH₵{item.price}
+                       </span>
                       <button
                         onClick={() => addToCart(item)}
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
@@ -209,9 +209,9 @@ const MenuPage = () => {
                             Qty: {item.quantity}
                           </p>
                         </div>
-                        <span className="text-sm font-medium text-gray-900">
-                          ${item.price * item.quantity}
-                        </span>
+                                                 <span className="text-sm font-medium text-gray-900">
+                           GH₵{item.price * item.quantity}
+                         </span>
                       </div>
                     ))}
                   </div>
@@ -219,7 +219,7 @@ const MenuPage = () => {
                   <div className="border-t pt-4 mb-6">
                     <div className="flex justify-between text-lg font-semibold text-gray-900">
                       <span>Total</span>
-                      <span>${getTotal()}</span>
+                                             <span>GH₵{getTotal()}</span>
                     </div>
                   </div>
 
@@ -234,7 +234,7 @@ const MenuPage = () => {
                       Soup of the Day
                     </h4>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">$9</span>
+                      <span className="text-sm text-gray-600">GH₵9</span>
                       <button className="text-blue-600 text-sm font-medium hover:text-blue-500">
                         Add to Cart
                       </button>

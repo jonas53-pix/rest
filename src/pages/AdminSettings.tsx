@@ -18,8 +18,8 @@ const AdminSettings = () => {
   const [activeSection, setActiveSection] = useState('Restaurant Info');
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [settings, setSettings] = useState({
-    restaurantName: 'RestoManage',
-    contactEmail: 'hello@restomanage.com',
+    restaurantName: 'TastyBite',
+    contactEmail: 'TastyBite@gmail.com',
     phone: '(555) 123-4567',
     address: '123 Riverside Ave, Cityville',
     openingHours: 'Mon-Sun, 10:00-22:00',
@@ -31,14 +31,14 @@ const AdminSettings = () => {
     publishableKey: 'pk_test_****',
     secretKey: 'sk_test_****',
     testMode: true,
-    defaultCurrency: 'USD ($)',
+    defaultCurrency: 'GHS (GH₵)',
     locale: 'English (US)',
     taxRate: '8.5',
     serviceCharge: '10',
     pricesIncludeTax: false,
     autoApplyServiceCharge: true,
-    orderNotificationsEmail: 'orders@restomanage.com',
-    reservationNotificationsEmail: 'reservations@restomanage.com',
+    orderNotificationsEmail: 'orders@TastyBite.com',
+    reservationNotificationsEmail: 'reservations@TastyBite.com',
     emailAlerts: true,
     smsAlerts: false
   });
@@ -298,7 +298,7 @@ const AdminSettings = () => {
                   onChange={(e) => handleInputChange('defaultCurrency', e.target.value)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  <option>USD ($)</option>
+                  <option>GHS (GH₵)</option>
                   <option>EUR (€)</option>
                   <option>GBP (£)</option>
                 </select>
@@ -460,7 +460,7 @@ const AdminSettings = () => {
       <div className="flex-1 flex flex-col overflow-hidden">
         <AdminHeader 
           searchPlaceholder="Search settings..."
-          additionalInfo="Environment: Production • Currency: USD"
+          additionalInfo="Environment: Production • Currency: GHS"
           showNew={false}
           showExport={false}
         />
