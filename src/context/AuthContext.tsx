@@ -34,8 +34,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string): Promise<boolean> => {
     // Mock authentication - check against provided credentials
-    if (email === 'User@gmail.com' && password === 'user12345') {
-      const userData = { email, name: 'John Doe' };
+    if (email === 'admin@gmail.com' && password === 'admin12345') {
+      const userData = { email, name: 'Alex Morgan' };
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
       return true;

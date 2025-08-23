@@ -22,7 +22,12 @@ const LoginPage = () => {
     try {
       const success = await login(email, password);
       if (success) {
-        navigate('/');
+        // Redirect to admin dashboard if admin credentials, otherwise to home
+        if (email === 'admin@gmail.com') {
+          navigate('/admin/dashboard');
+        } else {
+          navigate('/');
+        }
       } else {
         setError('Invalid email or password');
       }
@@ -156,8 +161,8 @@ const LoginPage = () => {
           <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
             <h4 className="text-sm font-medium text-blue-900 mb-2">Demo Credentials:</h4>
             <p className="text-sm text-blue-700">
-              Email: User@gmail.com<br />
-              Password: user12345
+              Email: admin@gmail.com<br />
+              Password: admin12345
             </p>
           </div>
         </div>
