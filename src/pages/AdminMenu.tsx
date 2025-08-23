@@ -27,7 +27,7 @@ const AdminMenu = () => {
       price: 'GH₵35.00',
       status: 'Active',
       tags: ['Rice', 'Chicken'],
-      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const AdminMenu = () => {
       price: 'GH₵40.00',
       status: 'Active',
       tags: ['Fish', 'Traditional'],
-      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const AdminMenu = () => {
       price: 'GH₵15.00',
       status: 'Active',
       tags: ['Plantain', 'Spicy'],
-      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 4,
@@ -57,7 +57,7 @@ const AdminMenu = () => {
       price: 'GH₵20.00',
       status: 'Hidden',
       tags: ['Rice', 'Beans'],
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 5,
@@ -67,7 +67,7 @@ const AdminMenu = () => {
       price: 'GH₵12.00',
       status: 'Active',
       tags: ['Sweet', 'Traditional'],
-      image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     }
   ];
 

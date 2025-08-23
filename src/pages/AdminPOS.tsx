@@ -25,7 +25,7 @@ const AdminPOS = () => {
       name: 'Jollof Rice',
       description: 'Aromatic rice • 450 cal',
       price: 25,
-      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Rice Dishes'
     },
     {
@@ -33,7 +33,7 @@ const AdminPOS = () => {
       name: 'Waakye',
       description: 'Rice and beans • 380 cal',
       price: 20,
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Rice Dishes'
     },
     {
@@ -41,7 +41,7 @@ const AdminPOS = () => {
       name: 'Groundnut Soup',
       description: 'Rich peanut soup • 320 cal',
       price: 18,
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Soups'
     },
     {
@@ -49,7 +49,7 @@ const AdminPOS = () => {
       name: 'Banku with Tilapia',
       description: 'Fermented corn dough • 520 cal',
       price: 40,
-      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Soups'
     },
     {
@@ -57,7 +57,7 @@ const AdminPOS = () => {
       name: 'Kelewele',
       description: 'Spiced plantain • 180 cal',
       price: 15,
-      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Starters'
     },
     {
@@ -65,7 +65,7 @@ const AdminPOS = () => {
       name: 'Bofrot',
       description: 'Sweet doughnuts • 320 cal',
       price: 12,
-      image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Desserts'
     }
   ];

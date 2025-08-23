@@ -23,7 +23,7 @@ const MenuPage = () => {
       name: 'Kelewele',
       description: 'Spiced fried plantain cubes with ginger and pepper',
       price: 15,
-      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
@@ -31,7 +31,7 @@ const MenuPage = () => {
       name: 'Bofrot',
       description: 'Traditional Ghanaian doughnuts, sweet and fluffy',
       price: 12,
-      image: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
@@ -39,7 +39,7 @@ const MenuPage = () => {
       name: 'Groundnut Soup',
       description: 'Rich peanut soup with vegetables and spices',
       price: 18,
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
@@ -47,7 +47,7 @@ const MenuPage = () => {
       name: 'Jollof Rice with Chicken',
       description: 'Aromatic rice cooked in tomato sauce with grilled chicken',
       price: 35,
-      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Main Dishes'
     },
     {
@@ -55,7 +55,7 @@ const MenuPage = () => {
       name: 'Banku with Grilled Tilapia',
       description: 'Fermented corn dough served with grilled tilapia and pepper sauce',
       price: 40,
-      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Main Dishes'
     },
     {
@@ -63,7 +63,7 @@ const MenuPage = () => {
       name: 'Bofrot with Honey',
       description: 'Sweet Ghanaian doughnuts drizzled with local honey',
       price: 15,
-      image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Desserts'
     },
     {
@@ -71,7 +71,7 @@ const MenuPage = () => {
       name: 'Sobolo',
       description: 'Refreshing hibiscus drink with ginger and spices',
       price: 12,
-      image: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://images.pexels.com/photos/4099235/pexels-photo-4099235.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Drinks'
     }
   ];
