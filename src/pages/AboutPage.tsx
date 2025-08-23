@@ -26,18 +26,18 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: 'Ava Martinez',
+      name: 'Mary Owusu',
       title: 'Executive Chef',
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     },
     {
-      name: 'Noah Kim',
+      name: 'Ansah Emmanuel',
       title: 'General Manager',
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     },
     {
-      name: 'Maya Patel',
-      title: 'Sommelier',
+      name: 'Felicia Ansah',
+      title: 'Waitress',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
     }
   ];
@@ -53,7 +53,7 @@ const AboutPage = () => {
                 Our Story
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Locally sourced, seasonally inspired since 2012. Crafted on the riverside for our community.
+                We provide our customers with the best ghanaian dishes.
               </p>
               
               {/* Stats */}
@@ -105,7 +105,7 @@ const AboutPage = () => {
           <div className="space-y-12">
             {/* Team Section */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Meet the Team</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Meet our chefs</h2>
               <div className="space-y-6">
                 {team.map((member, index) => (
                   <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex items-center space-x-4">
@@ -148,8 +148,8 @@ const AboutPage = () => {
                     <div className="flex items-start space-x-2">
                       <MapPin className="h-5 w-5 mt-0.5 text-gray-400" />
                       <div>
-                        <div className="font-medium text-gray-900">123 Riverside Ave, Cityville</div>
-                        <div className="text-sm">Waterfront seating • Private dining room</div>
+                        <div className="font-medium text-gray-900">Tesano-Accra</div>
+                        <div className="text-sm">We give nothing but the best</div>
                       </div>
                     </div>
                   </div>

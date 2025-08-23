@@ -63,10 +63,10 @@ const AdminSidebar: React.FC<AdminSidebarProps> = ({ isExpanded = true }) => {
       <div className="p-6 border-b border-gray-800">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-lg">R</span>
+            <span className="text-white font-bold text-lg">TB</span>
           </div>
           {isExpanded && (
-            <span className="text-xl font-bold">Resto Admin</span>
+            <span className="text-xl font-bold">TastyBite</span>
           )}
         </div>
       </div>

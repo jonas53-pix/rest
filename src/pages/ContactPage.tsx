@@ -31,7 +31,7 @@ const ContactPage = () => {
                 Contact TastyBite
               </h1>
               <p className="text-xl text-gray-600">
-                We'd love to hear from you. Send a message, call us, or stop by the riverside.
+                We'd love to hear from you. Send a message, call us, or stop by TastyBite.
               </p>
             </div>
             <div>
@@ -149,8 +149,8 @@ const ContactPage = () => {
                 <div className="flex items-start space-x-3 mb-2">
                   <MapPin className="h-5 w-5 text-gray-400 mt-1" />
                   <div>
-                    <div className="font-medium text-gray-900">123 Riverside Ave, Cityville</div>
-                    <div className="text-gray-600">Waterfront District</div>
+                    <div className="font-medium text-gray-900">Tesano-Accra</div>
+                    <div className="text-gray-600">Accra District</div>
                   </div>
                 </div>
               </div>
@@ -172,7 +172,7 @@ const ContactPage = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-gray-400" />
-                  <a href="tel:5551234567" className="text-blue-600 hover:text-blue-500">
+                  <a href="tel:0533458268" className="text-blue-600 hover:text-blue-500">
                     (555) 123-4567
                   </a>
                 </div>
