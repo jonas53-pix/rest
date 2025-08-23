@@ -6,53 +6,51 @@ import { Plus, Archive, Edit, Trash2 } from 'lucide-react';
 const AdminCategories = () => {
   const [selectedCategory, setSelectedCategory] = useState('Mains');
   const [categoryData, setCategoryData] = useState({
-    name: 'Mains',
+    name: 'Rice Dishes',
     visibility: 'Active',
-    description: 'Main course dishes including steaks, seafood, and signature entrees',
-    slug: 'mains'
+    description: 'Traditional Ghanaian rice dishes including jollof, waakye, and fried rice',
+    slug: 'rice-dishes'
   });
 
   const categories = [
-    { name: 'Mains', items: 12, active: true },
-    { name: 'Starters', items: 8, active: true },
-    { name: 'Seafood', items: 6, active: true },
-    { name: 'Salads', items: 5, active: true },
+    { name: 'Rice Dishes', items: 8, active: true },
+    { name: 'Starters', items: 6, active: true },
+    { name: 'Traditional', items: 10, active: true },
+    { name: 'Soups', items: 7, active: true },
     { name: 'Desserts', items: 7, active: true },
-    { name: 'Beverages', items: 15, active: true },
-    { name: 'Specials', items: 3, active: false },
-    { name: 'Kids Menu', items: 4, active: true },
-    { name: 'Sides', items: 6, active: true }
+    { name: 'Beverages', items: 8, active: true },
+    { name: 'Specials', items: 4, active: false }
   ];
 
   const categoryItems = [
     {
       id: 'DISH-001',
-      name: 'Ribeye Steak 10oz',
-      price: 'GH₵32.00',
+      name: 'Jollof Rice with Chicken',
+      price: 'GH₵35.00',
       status: 'Active'
     },
     {
       id: 'DISH-002',
-      name: 'Atlantic Salmon Fillet',
-      price: 'GH₵28.00',
+      name: 'Waakye with Stew',
+      price: 'GH₵22.00',
       status: 'Active'
     },
     {
       id: 'DISH-003',
-      name: 'Grilled Chicken Breast',
-      price: 'GH₵24.00',
+      name: 'Fried Rice',
+      price: 'GH₵28.00',
       status: 'Active'
     },
     {
       id: 'DISH-004',
-      name: 'Lamb Chops',
-      price: 'GH₵36.00',
+      name: 'Coconut Rice',
+      price: 'GH₵30.00',
       status: 'Hidden'
     },
     {
       id: 'DISH-005',
-      name: 'Vegetarian Pasta',
-      price: 'GH₵18.00',
+      name: 'Plain Rice with Stew',
+      price: 'GH₵20.00',
       status: 'Active'
     }
   ];
@@ -63,7 +61,7 @@ const AdminCategories = () => {
     setCategoryData({
       name: categoryName,
       visibility: category?.active ? 'Active' : 'Hidden',
-      description: `${categoryName} category description`,
+      description: `Traditional Ghanaian ${categoryName.toLowerCase()} with authentic flavors`,
       slug: categoryName.toLowerCase().replace(/\s+/g, '-')
     });
   };

@@ -21,61 +21,63 @@ const AdminMenu = () => {
   const dishes = [
     {
       id: 1,
-      name: 'Ribeye Steak 10oz',
-      sku: 'RIB-001',
-      category: 'Mains',
-      price: 'GH₵32.00',
+      name: 'Jollof Rice with Chicken',
+      sku: 'JOL-001',
+      category: 'Rice Dishes',
+      price: 'GH₵35.00',
       status: 'Active',
-      tags: ['Meat', 'Gluten Free'],
-      image: 'https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      tags: ['Rice', 'Chicken'],
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 2,
-      name: 'Atlantic Salmon Fillet',
-      sku: 'SAL-002',
-      category: 'Mains',
-      price: 'GH₵28.00',
+      name: 'Banku with Grilled Tilapia',
+      sku: 'BAN-002',
+      category: 'Traditional',
+      price: 'GH₵40.00',
       status: 'Active',
-      tags: ['Seafood', 'Gluten Free'],
-      image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      tags: ['Fish', 'Traditional'],
+      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 3,
-      name: 'Caesar Salad',
-      sku: 'SAL-003',
+      name: 'Kelewele',
+      sku: 'KEL-003',
       category: 'Starters',
-      price: 'GH₵14.00',
+      price: 'GH₵15.00',
       status: 'Active',
-      tags: ['Vegetarian'],
-      image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      tags: ['Plantain', 'Spicy'],
+      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 4,
-      name: 'Margherita Pizza',
-      sku: 'PIZ-004',
-      category: 'Mains',
-      price: 'GH₵18.00',
+      name: 'Waakye',
+      sku: 'WAA-004',
+      category: 'Rice Dishes',
+      price: 'GH₵20.00',
       status: 'Hidden',
-      tags: ['Vegetarian'],
-      image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      tags: ['Rice', 'Beans'],
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     },
     {
       id: 5,
-      name: 'Chocolate Brownie',
-      sku: 'DES-005',
+      name: 'Bofrot',
+      sku: 'BOF-005',
       category: 'Desserts',
-      price: 'GH₵9.00',
+      price: 'GH₵12.00',
       status: 'Active',
-      tags: ['Vegetarian'],
-      image: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
+      tags: ['Sweet', 'Traditional'],
+      image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop'
     }
   ];
 
   const menuGroups = [
-    { name: 'Starters', count: 8 },
-    { name: 'Mains', count: 15 },
+    { name: 'Starters', items: 6 },
+    { name: 'Rice Dishes', items: 8 },
+    { name: 'Traditional', items: 10 },
+    { name: 'Soups', items: 7 },
     { name: 'Desserts', count: 6 },
-    { name: 'Beverages', count: 12 }
+    { name: 'Beverages', items: 8 }
   ];
 
   const handleCreateDish = () => {

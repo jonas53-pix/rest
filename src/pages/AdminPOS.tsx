@@ -7,8 +7,8 @@ const AdminPOS = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [cartItems, setCartItems] = useState([
-    { id: '1', name: 'Margherita Pizza', price: 18, quantity: 2, total: 36 },
-    { id: '2', name: 'Caesar Salad', price: 12, quantity: 1, total: 12 }
+    { id: '1', name: 'Jollof Rice with Chicken', price: 35, quantity: 2, total: 70 },
+    { id: '2', name: 'Kelewele', price: 15, quantity: 1, total: 15 }
   ]);
   const [orderDetails, setOrderDetails] = useState({
     customer: 'Walk-in',
@@ -17,54 +17,54 @@ const AdminPOS = () => {
     notes: 'Birthday candle'
   });
 
-  const categories = ['All', 'Pizza', 'Salads', 'Pasta', 'Desserts', 'Drinks'];
+  const categories = ['All', 'Rice Dishes', 'Soups', 'Starters', 'Desserts', 'Drinks'];
   
   const menuItems = [
     {
       id: '1',
-      name: 'Margherita Pizza',
-      description: '12" Veg • 680 cal',
-      price: 18,
-      image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
-      category: 'Pizza'
+      name: 'Jollof Rice',
+      description: 'Aromatic rice • 450 cal',
+      price: 25,
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      category: 'Rice Dishes'
     },
     {
       id: '2',
-      name: 'BBQ Chicken Pizza',
-      description: '12" Meat • 820 cal',
-      price: 22,
-      image: 'https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
-      category: 'Pizza'
+      name: 'Waakye',
+      description: 'Rice and beans • 380 cal',
+      price: 20,
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      category: 'Rice Dishes'
     },
     {
       id: '3',
-      name: 'Caesar Salad',
-      description: 'Fresh romaine • 340 cal',
-      price: 12,
-      image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
-      category: 'Salads'
+      name: 'Groundnut Soup',
+      description: 'Rich peanut soup • 320 cal',
+      price: 18,
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      category: 'Soups'
     },
     {
       id: '4',
-      name: 'Spaghetti Bolognese',
-      description: 'Classic meat sauce • 650 cal',
-      price: 16,
-      image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
-      category: 'Pasta'
+      name: 'Banku with Tilapia',
+      description: 'Fermented corn dough • 520 cal',
+      price: 40,
+      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      category: 'Soups'
     },
     {
       id: '5',
-      name: 'Garlic Bread',
-      description: '6 pieces • 280 cal',
-      price: 8,
+      name: 'Kelewele',
+      description: 'Spiced plantain • 180 cal',
+      price: 15,
       image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
-      category: 'Sides'
+      category: 'Starters'
     },
     {
       id: '6',
-      name: 'Tiramisu',
-      description: 'Classic Italian • 420 cal',
-      price: 10,
+      name: 'Bofrot',
+      description: 'Sweet doughnuts • 320 cal',
+      price: 12,
       image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Desserts'
     }

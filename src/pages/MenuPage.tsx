@@ -8,9 +8,9 @@ const MenuPage = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   const categories = [
-    { name: 'Starters', count: 6 },
-    { name: 'Main Dishes', count: 8 },
-    { name: 'Pasta', count: 5 },
+    { name: 'Starters', count: 8 },
+    { name: 'Main Dishes', count: 12 },
+    { name: 'Soups', count: 6 },
     { name: 'Desserts', count: 4 },
     { name: 'Drinks', count: 10 }
   ];
@@ -20,57 +20,57 @@ const MenuPage = () => {
   const menuItems = [
     {
       id: '1',
-      name: 'Tomato Bruschetta',
-      description: 'Fresh tomatoes, basil, and mozzarella on toasted bread',
-      price: 12,
-      image: 'https://images.pexels.com/photos/1352199/pexels-photo-1352199.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      name: 'Kelewele',
+      description: 'Spiced fried plantain cubes with ginger and pepper',
+      price: 15,
+      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
       id: '2',
-      name: 'Crispy Calamari',
-      description: 'Golden fried squid rings with spicy marinara sauce',
-      price: 16,
-      image: 'https://images.pexels.com/photos/4002854/pexels-photo-4002854.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      name: 'Bofrot',
+      description: 'Traditional Ghanaian doughnuts, sweet and fluffy',
+      price: 12,
+      image: 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
       id: '3',
-      name: 'Caesar Salad',
-      description: 'Fresh romaine lettuce with parmesan and croutons',
-      price: 14,
-      image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      name: 'Groundnut Soup',
+      description: 'Rich peanut soup with vegetables and spices',
+      price: 18,
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Starters'
     },
     {
       id: '4',
-      name: 'Grilled Chicken',
-      description: 'Herb-marinated chicken breast with seasonal vegetables',
-      price: 24,
-      image: 'https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      name: 'Jollof Rice with Chicken',
+      description: 'Aromatic rice cooked in tomato sauce with grilled chicken',
+      price: 35,
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Main Dishes'
     },
     {
       id: '5',
-      name: 'Seafood Linguine',
-      description: 'Fresh prawns and mussels in white wine sauce',
-      price: 28,
-      image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
-      category: 'Pasta'
+      name: 'Banku with Grilled Tilapia',
+      description: 'Fermented corn dough served with grilled tilapia and pepper sauce',
+      price: 40,
+      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      category: 'Main Dishes'
     },
     {
       id: '6',
-      name: 'Tiramisu',
-      description: 'Classic Italian dessert with espresso and mascarpone',
-      price: 10,
+      name: 'Bofrot with Honey',
+      description: 'Sweet Ghanaian doughnuts drizzled with local honey',
+      price: 15,
       image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Desserts'
     },
     {
       id: '7',
-      name: 'Signature Cocktail',
-      description: 'House special blend with premium spirits',
-      price: 15,
+      name: 'Sobolo',
+      description: 'Refreshing hibiscus drink with ginger and spices',
+      price: 12,
       image: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
       category: 'Drinks'
     }

@@ -18,80 +18,80 @@ const AdminInventory = () => {
   const inventoryItems = [
     {
       id: 1,
-      name: 'Ribeye Steak 10oz',
-      sku: 'RIB-001',
-      tags: ['Meat'],
+      name: 'Jasmine Rice 25kg',
+      sku: 'RIC-001',
+      tags: ['Rice'],
       autoReorder: true,
-      category: 'Meat',
-      supplier: 'Premium Meats Co.',
+      category: 'Grains',
+      supplier: 'Ghana Rice Co.',
       status: 'In Stock',
       onHand: 45,
       parLevel: 20,
-      unitCost: 'GH₵12.50',
+      unitCost: 'GH₵85.00',
       stockLevel: 'high'
     },
     {
       id: 2,
-      name: 'Atlantic Salmon Fillet',
-      sku: 'SAL-002',
-      tags: ['Seafood'],
+      name: 'Fresh Tilapia 2kg',
+      sku: 'TIL-002',
+      tags: ['Fish'],
       autoReorder: true,
-      category: 'Seafood',
-      supplier: 'Ocean Fresh',
+      category: 'Fish',
+      supplier: 'Volta Lake Fisheries',
       status: 'Low',
       onHand: 8,
       parLevel: 15,
-      unitCost: 'GH₵8.75',
+      unitCost: 'GH₵25.00',
       stockLevel: 'low'
     },
     {
       id: 3,
-      name: 'Russet Potatoes 50lb',
-      sku: 'POT-003',
-      tags: ['Produce'],
+      name: 'Plantain 50 pieces',
+      sku: 'PLA-003',
+      tags: ['Plantain'],
       autoReorder: false,
       category: 'Produce',
-      supplier: 'Farm Direct',
+      supplier: 'Ashanti Farms',
       status: 'In Stock',
       onHand: 12,
       parLevel: 5,
-      unitCost: 'GH₵18.00',
+      unitCost: 'GH₵30.00',
       stockLevel: 'high'
     },
     {
       id: 4,
-      name: 'Whole Milk 1gal',
-      sku: 'MIL-004',
-      tags: ['Dairy'],
-      autoReorder: true,
-      category: 'Dairy',
-      supplier: 'Local Dairy',
+      name: 'Palm Oil 5L',
+      sku: 'OIL-004',
+      tags: ['Oil'],
+      autoReorder: false,
+      category: 'Oils',
+      supplier: 'Western Region Oils',
       status: 'Out',
       onHand: 0,
       parLevel: 10,
-      unitCost: 'GH₵3.25',
+      unitCost: 'GH₵45.00',
       stockLevel: 'out'
     },
     {
       id: 5,
-      name: 'Extra Virgin Olive Oil',
-      sku: 'OIL-005',
-      tags: ['Pantry'],
+      name: 'Groundnuts 10kg',
+      sku: 'GRO-005',
+      tags: ['Nuts'],
       autoReorder: false,
-      category: 'Pantry',
-      supplier: 'Mediterranean Imports',
+      category: 'Nuts',
+      supplier: 'Northern Ghana Nuts',
       status: 'In Stock',
       onHand: 24,
       parLevel: 8,
-      unitCost: 'GH₵15.50',
+      unitCost: 'GH₵35.00',
       stockLevel: 'high'
     }
   ];
 
   const reorderShortcuts = [
-    'Weekly Produce Order',
-    'Meat & Seafood Replenishment',
-    'Dairy & Eggs Restock'
+    'Weekly Rice & Grains Order',
+    'Fresh Fish & Meat Replenishment',
+    'Plantain & Vegetables Restock'
   ];
 
   const handleCreateItem = () => {
@@ -116,11 +116,12 @@ const AdminInventory = () => {
 
   const getTagColor = (tag) => {
     const colors = {
-      'Meat': 'bg-red-100 text-red-800',
-      'Seafood': 'bg-blue-100 text-blue-800',
+      'Rice': 'bg-yellow-100 text-yellow-800',
+      'Fish': 'bg-blue-100 text-blue-800',
+      'Plantain': 'bg-green-100 text-green-800',
       'Produce': 'bg-green-100 text-green-800',
-      'Dairy': 'bg-yellow-100 text-yellow-800',
-      'Pantry': 'bg-purple-100 text-purple-800'
+      'Oil': 'bg-orange-100 text-orange-800',
+      'Nuts': 'bg-purple-100 text-purple-800'
     };
     return colors[tag] || 'bg-gray-100 text-gray-800';
   };
@@ -345,11 +346,12 @@ const AdminInventory = () => {
                       onChange={(e) => setNewItem({...newItem, category: e.target.value})}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
+                      <option>Grains</option>
+                      <option>Fish</option>
                       <option>Produce</option>
-                      <option>Meat</option>
-                      <option>Seafood</option>
-                      <option>Dairy</option>
-                      <option>Pantry</option>
+                      <option>Oils</option>
+                      <option>Spices</option>
+                      <option>Nuts</option>
                     </select>
                   </div>
                   

@@ -41,6 +41,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
       return true;
+    } else if (email === 'User@gmail.com' && password === 'user1234') {
+      const userData = { email, name: 'John Doe' };
+      setUser(userData);
+      localStorage.setItem('user', JSON.stringify(userData));
+      return true;
     }
     return false;
   };

@@ -28,19 +28,19 @@ const HomePage = () => {
 
   const popularDishes = [
     {
-      name: 'Classic Burger',
-      price: 'GH₵18',
-      image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      name: 'Jollof Rice',
+      price: 'GH₵25',
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
-      name: 'Margarita Pizza',
-      price: 'GH₵22',
-      image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      name: 'Banku with Tilapia',
+      price: 'GH₵35',
+      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
-      name: 'Green Salad',
-      price: 'GH₵14',
-      image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      name: 'Kelewele',
+      price: 'GH₵15',
+      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     }
   ];
 

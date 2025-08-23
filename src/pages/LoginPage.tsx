@@ -160,10 +160,18 @@ const LoginPage = () => {
           {/* Demo Credentials */}
           <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
             <h4 className="text-sm font-medium text-blue-900 mb-2">Demo Credentials:</h4>
-            <p className="text-sm text-blue-700">
-              Email: admin@gmail.com<br />
-              Password: admin12345
-            </p>
+            <div className="text-sm text-blue-700 space-y-2">
+              <div>
+                <strong>Admin Dashboard:</strong><br />
+                Email: admin@gmail.com<br />
+                Password: admin12345
+              </div>
+              <div>
+                <strong>User Dashboard:</strong><br />
+                Email: User@gmail.com<br />
+                Password: user1234
+              </div>
+            </div>
           </div>
         </div>
       </div>

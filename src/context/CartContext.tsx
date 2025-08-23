@@ -32,22 +32,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [items, setItems] = useState<CartItem[]>([
     {
       id: '1',
-      name: 'Grilled Salmon',
-      price: 22,
+      name: 'Jollof Rice with Chicken',
+      price: 35,
       quantity: 1,
-      image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
+      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
     },
     {
       id: '2',
-      name: 'Caesar Salad',
-      price: 9,
+      name: 'Kelewele',
+      price: 15,
       quantity: 2,
-      image: 'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
+      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
     },
     {
       id: '3',
-      name: 'Tiramisu',
-      price: 9,
+      name: 'Bofrot with Honey',
+      price: 15,
       quantity: 1,
       image: 'https://images.pexels.com/photos/7035697/pexels-photo-7035697.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
     }
