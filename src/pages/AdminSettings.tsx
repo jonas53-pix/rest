@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AdminSidebar from '../components/AdminSidebar';
 import AdminHeader from '../components/AdminHeader';
+import PaymentMethodsModal from '../components/PaymentMethodsModal';
 import { 
   Store, 
   CreditCard, 
@@ -15,6 +16,7 @@ import {
 
 const AdminSettings = () => {
   const [activeSection, setActiveSection] = useState('Restaurant Info');
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [settings, setSettings] = useState({
     restaurantName: 'RestoManage',
     contactEmail: 'hello@restomanage.com',
@@ -194,6 +196,12 @@ const AdminSettings = () => {
               <div className="flex space-x-3">
                 <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                   Test Mode
+                </button>
+                <button 
+                  onClick={() => setShowPaymentModal(true)}
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                >
+                  Payment Methods
                 </button>
                 <button 
                   onClick={() => handleSave('Payments')}
@@ -495,6 +503,12 @@ const AdminSettings = () => {
           </div>
         </main>
       </div>
+      
+      {/* Payment Methods Modal */}
+      <PaymentMethodsModal 
+        isOpen={showPaymentModal} 
+        onClose={() => setShowPaymentModal(false)} 
+      />
     </div>
   );
 };
