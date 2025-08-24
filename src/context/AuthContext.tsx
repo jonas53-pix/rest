@@ -18,7 +18,10 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+// Use the same protocol as the current page to avoid mixed content issues
+const API_BASE_URL = window.location.protocol === 'https:' 
+  ? 'https://localhost:8000/api/v1' 
+  : 'http://localhost:8000/api/v1';
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
