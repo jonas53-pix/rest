@@ -18,8 +18,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Explicitly use HTTP for development backend
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+// Use HTTPS for development backend to match frontend protocol
+const API_BASE_URL = 'https://localhost:8000/api/v1';
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
