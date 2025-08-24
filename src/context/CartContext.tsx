@@ -29,29 +29,7 @@ export const useCart = () => {
 };
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>([
-    {
-      id: '1',
-      name: 'Jollof Rice with Chicken',
-      price: 35,
-      quantity: 1,
-      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
-    },
-    {
-      id: '2',
-      name: 'Kelewele',
-      price: 15,
-      quantity: 2,
-      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
-    },
-    {
-      id: '3',
-      name: 'Bofrot with Honey',
-      price: 15,
-      quantity: 1,
-      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop'
-    }
-  ]);
+  const [items, setItems] = useState<CartItem[]>([]);
 
   const addToCart = (item: Omit<CartItem, 'quantity'>) => {
     setItems(prevItems => {

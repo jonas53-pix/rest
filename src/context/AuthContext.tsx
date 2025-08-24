@@ -27,13 +27,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [logoutCallback, setLogoutCallback] = useState<(() => void) | null>(null);
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    }
-  }, []);
-
   const login = async (email: string, password: string): Promise<boolean> => {
     // Mock authentication - check against provided credentials
     if (email === 'admin@gmail.com' && password === 'admin12345') {
