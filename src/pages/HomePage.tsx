@@ -30,17 +30,17 @@ const HomePage = () => {
     {
       name: 'Jollof Rice',
       price: 'GH₵25',
-      image: 'https://images.pexels.com/photos/8477552/pexels-photo-8477552.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Banku with Tilapia',
       price: 'GH₵35',
-      image: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Kelewele',
       price: 'GH₵15',
-      image: 'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     }
   ];
 
@@ -93,7 +93,7 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                src="https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
                 alt="Delicious food"
                 className="rounded-lg shadow-2xl"
               />
