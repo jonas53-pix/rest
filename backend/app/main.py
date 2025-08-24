@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 # from fastapi.staticfiles import StaticFiles
 import uvicorn
+import ssl
 
 from app.core.config import settings
 from app.api.api_v1.api import api_router
@@ -20,7 +21,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["https://localhost:5173", "http://localhost:5173", "https://localhost:3000", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -41,9 +42,15 @@ async def health_check():
     return {"status": "healthy"}
 
 if __name__ == "__main__":
+    # Create SSL context for HTTPS
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    ssl_context.load_cert_chain("cert.pem", "key.pem")
+    
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
         port=8000,
+        ssl_keyfile="key.pem",
+        ssl_certfile="cert.pem",
         reload=True if settings.ENVIRONMENT == "development" else False
     )
