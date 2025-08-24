@@ -22,8 +22,9 @@ const LoginPage = () => {
     try {
       const success = await login(email, password);
       if (success) {
-        // Redirect to admin dashboard if admin credentials, otherwise to home
-        if (email === 'admin@tastybite.com') {
+        // Redirect to admin dashboard if admin role, otherwise to home
+        const userData = JSON.parse(localStorage.getItem('user') || '{}');
+        if (userData.role === 'admin' || userData.role === 'ADMIN') {
           navigate('/admin/dashboard');
         } else {
           navigate('/');
@@ -164,8 +165,9 @@ const LoginPage = () => {
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <h3 className="text-sm font-medium text-gray-700 mb-2">Demo Credentials:</h3>
             <div className="text-xs text-gray-600 space-y-1">
-              <div><strong>Admin:</strong> admin@tastybite.com / admin123</div>
-              <div><strong>Customer:</strong> customer@example.com / customer123</div>
+              <div><strong>Admin:</strong> admin@gmail.com / admin12345</div>
+              <div><strong>Customer:</strong> User@gmail.com / user12345</div>
+              <div><strong>Super Admin:</strong> superadmin@tastybite.com / superadmin2024</div>
             </div>
           </div>
 

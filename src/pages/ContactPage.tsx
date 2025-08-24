@@ -10,8 +10,8 @@ const ContactPage = () => {
     message: ''
   });
 
-  const handleInputChange = (e: React.Target & { name: string; value: string }) => {
-    const { name, value } = e;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -56,66 +56,66 @@ const ContactPage = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Your Name
                 </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange(e.target)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                />
-              </div>
+                                 <input
+                   type="text"
+                   name="name"
+                   value={formData.name}
+                   onChange={handleInputChange}
+                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                   required
+                 />
+               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange(e.target)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange(e.target)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 <div>
+                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                     Email
+                   </label>
+                   <input
+                     type="email"
+                     name="email"
+                     value={formData.email}
+                     onChange={handleInputChange}
+                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                     required
+                   />
+                 </div>
+                 <div>
+                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                     Phone
+                   </label>
+                   <input
+                     type="tel"
+                     name="phone"
+                     value={formData.phone}
+                     onChange={handleInputChange}
+                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                   />
+                 </div>
+               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={(e) => handleInputChange(e.target)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Question about private events"
-                />
-              </div>
+               <div>
+                 <label className="block text-sm font-medium text-gray-700 mb-2">
+                   Subject
+                 </label>
+                 <input
+                   type="text"
+                   name="subject"
+                   value={formData.subject}
+                   onChange={handleInputChange}
+                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                   placeholder="Question about private events"
+                 />
+               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={(e) => handleInputChange(e.target)}
+               <div>
+                 <label className="block text-sm font-medium text-gray-700 mb-2">
+                   Message
+                 </label>
+                 <textarea
+                   name="message"
+                   value={formData.message}
+                   onChange={handleInputChange}
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Hello! I'd like to inquire about hosting a 30-person dinner next month. What packages are available?"
@@ -172,8 +172,8 @@ const ContactPage = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-gray-400" />
-                  <a href="tel:0533458268" className="text-blue-600 hover:text-blue-500">
-                    0533458268
+                  <a href="tel:auth/login" className="text-blue-600 hover:text-blue-500">
+                    auth/login
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">

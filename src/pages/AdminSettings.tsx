@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AdminSidebar from '../components/AdminSidebar';
 import AdminHeader from '../components/AdminHeader';
 import { 
@@ -22,7 +22,7 @@ const AdminSettings = () => {
   const [settings, setSettings] = useState({
     restaurantName: 'TastyBite',
     contactEmail: 'TastyBite@gmail.com',
-    phone: '0533458268',
+    phone: 'auth/login',
     address: '123 Riverside Ave, Cityville',
     openingHours: 'Mon-Sun, 10:00-22:00',
     timeZone: 'GMT-5 (EST)',
@@ -57,15 +57,15 @@ const AdminSettings = () => {
     { name: 'Branding', icon: Palette }
   ];
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setSettings(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleToggle = (field) => {
-    setSettings(prev => ({ ...prev, [field]: !prev[field] }));
+  const handleToggle = (field: string) => {
+    setSettings(prev => ({ ...prev, [field]: !prev[field as keyof typeof prev] }));
   };
 
-  const handleSave = (section) => {
+  const handleSave = (section: string) => {
     console.log(`Saving ${section} settings:`, settings);
   };
 
