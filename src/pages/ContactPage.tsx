@@ -173,7 +173,7 @@ const ContactPage = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-gray-400" />
                   <a href="tel:0533458268" className="text-blue-600 hover:text-blue-500">
-                    (555) 123-4567
+                    0533458268
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">

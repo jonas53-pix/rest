@@ -22,7 +22,7 @@ const AdminSettings = () => {
   const [settings, setSettings] = useState({
     restaurantName: 'TastyBite',
     contactEmail: 'TastyBite@gmail.com',
-    phone: '(555) 123-4567',
+    phone: '0533458268',
     address: '123 Riverside Ave, Cityville',
     openingHours: 'Mon-Sun, 10:00-22:00',
     timeZone: 'GMT-5 (EST)',

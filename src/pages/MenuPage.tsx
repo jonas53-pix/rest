@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Plus } from 'lucide-react';
 
 const MenuPage = () => {
+  const navigate = useNavigate();
   const { addToCart, items, getTotal } = useCart();
   const [activeCategory, setActiveCategory] = useState('Starters');
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [showAddedNotification, setShowAddedNotification] = useState(false);
+  const [addedItemName, setAddedItemName] = useState('');
 
   const categories = [
     { name: 'Starters', count: 8 },
@@ -84,17 +88,55 @@ const MenuPage = () => {
     );
   };
 
+  const handleCheckout = () => {
+    if (items.length > 0) {
+      navigate('/checkout');
+    }
+  };
+
+  const handleAddToCart = (item: any) => {
+    addToCart(item);
+    setAddedItemName(item.name);
+    setShowAddedNotification(true);
+    setTimeout(() => setShowAddedNotification(false), 3000);
+  };
+
   const filteredItems = menuItems.filter(item => 
     activeCategory === 'All' || item.category === activeCategory
   );
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Notification */}
+      {showAddedNotification && (
+        <div className="fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in">
+          <div className="flex items-center space-x-2">
+            <span>✓</span>
+            <span>{addedItemName} added to cart!</span>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Browse the Menu</h1>
           <p className="text-xl text-gray-600">Order online for pickup or delivery. Freshly prepared, always.</p>
+          
+          {/* Cart Summary */}
+          {items.length > 0 && (
+            <div className="mt-6 inline-flex items-center space-x-4 bg-blue-50 px-6 py-3 rounded-full">
+              <span className="text-blue-700 font-medium">
+                Cart: {items.length} item{items.length !== 1 ? 's' : ''} • Total: GH₵{getTotal()}
+              </span>
+              <button
+                onClick={handleCheckout}
+                className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                Proceed to Checkout
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -168,7 +210,7 @@ const MenuPage = () => {
                          GH₵{item.price}
                        </span>
                       <button
-                        onClick={() => addToCart(item)}
+                        onClick={() => handleAddToCart(item)}
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
                       >
                         <Plus className="h-4 w-4" />
@@ -223,7 +265,10 @@ const MenuPage = () => {
                     </div>
                   </div>
 
-                  <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={handleCheckout}
+                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+                  >
                     <ShoppingCart className="h-5 w-5" />
                     <span>Go to Checkout</span>
                   </button>

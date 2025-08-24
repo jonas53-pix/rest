@@ -93,8 +93,8 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                alt="Delicious food"
+                src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                alt="Traditional meal served on banana leaf with rice, meat, noodles, sausages, and fresh vegetables"
                 className="rounded-lg shadow-2xl"
               />
             </div>

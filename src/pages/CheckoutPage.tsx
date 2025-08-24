@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { CreditCard, Shield, Plus } from 'lucide-react';
+import { CreditCard, Shield, Plus, CheckCircle } from 'lucide-react';
+import { orderService, OrderCreate } from '../services/orderService';
+import { useNotifications } from '../context/NotificationContext';
 
 const CheckoutPage = () => {
-  const { items, getTotal, updateQuantity, removeFromCart } = useCart();
+  const navigate = useNavigate();
+  const { addNotification } = useNotifications();
+  const { items, getTotal, updateQuantity, removeFromCart, clearCart } = useCart();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
+  const [orderNumber, setOrderNumber] = useState('');
   const [formData, setFormData] = useState({
     fullName: 'Jane Doe',
     phone: '555-000-1234',
@@ -33,9 +41,91 @@ const CheckoutPage = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handlePayment = () => {
-    alert('Payment processed successfully!');
+  const handlePayment = async () => {
+    if (items.length === 0) {
+      addNotification({
+        type: 'warning',
+        title: 'Empty Cart',
+        message: 'Your cart is empty! Please add items before checkout.',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      // Prepare order data
+      const orderData: OrderCreate = {
+        order_type: 'delivery', // Default to delivery, can be made configurable
+        delivery_address: formData.address,
+        delivery_notes: formData.deliveryNotes,
+        items: items.map(item => ({
+          menu_item_id: parseInt(item.id),
+          quantity: item.quantity,
+        })),
+      };
+
+      // Create order
+      const order = await orderService.createOrder(orderData);
+      
+      // Show success notification
+      addNotification({
+        type: 'success',
+        title: 'Order Placed Successfully!',
+        message: `Order #${order.order_number} has been created and sent to the kitchen`,
+      });
+      
+      // Show success
+      setOrderNumber(order.order_number);
+      setOrderSuccess(true);
+      
+      // Clear cart after successful order
+      clearCart();
+      
+      // Redirect to success page or show success message
+      setTimeout(() => {
+        navigate('/');
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Error creating order:', error);
+      addNotification({
+        type: 'error',
+        title: 'Order Failed',
+        message: 'Failed to create order. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  // Show success message if order was successful
+  if (orderSuccess) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-green-600" />
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Order Placed Successfully!</h1>
+          <p className="text-gray-600 mb-4">Your order has been received and is being processed.</p>
+          <div className="bg-blue-50 rounded-lg p-4 mb-6">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">Order Number:</span> {orderNumber}
+            </p>
+          </div>
+          <p className="text-sm text-gray-500 mb-6">
+            You will receive a confirmation email shortly. Redirecting to home page in 5 seconds...
+          </p>
+          <button
+            onClick={() => navigate('/')}
+            className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+          >
+            Go to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -349,9 +439,21 @@ const CheckoutPage = () => {
             {/* Payment Button */}
             <button
               onClick={handlePayment}
-              className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-6 text-lg"
+              disabled={isSubmitting || items.length === 0}
+              className={`w-full py-4 px-6 rounded-lg font-medium transition-colors mt-6 text-lg ${
+                isSubmitting || items.length === 0
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
             >
-                              Pay GH₵{total.toFixed(2)}
+              {isSubmitting ? (
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Processing Order...</span>
+                </div>
+              ) : (
+                `Pay GH₵${total.toFixed(2)}`
+              )}
             </button>
 
             {/* Add Promo Code */}

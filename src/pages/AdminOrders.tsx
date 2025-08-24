@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from '../components/AdminSidebar';
 import AdminHeader from '../components/AdminHeader';
-import { Eye, Printer, CreditCard, CheckCircle, MoreHorizontal } from 'lucide-react';
+import { Eye, Printer, CreditCard, CheckCircle, MoreHorizontal, RefreshCw } from 'lucide-react';
+import { orderService, Order } from '../services/orderService';
+import { useNotifications } from '../context/NotificationContext';
 
 const AdminOrders = () => {
+  const { addNotification } = useNotifications();
   const [activeTab, setActiveTab] = useState('All');
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [previousOrderCount, setPreviousOrderCount] = useState(0);
   const [filters, setFilters] = useState({
     date: 'Today',
     orderType: 'All',
@@ -14,55 +21,113 @@ const AdminOrders = () => {
 
   const tabs = ['All', 'Open', 'Preparing', 'Ready', 'Completed'];
   
+  // Fetch orders from backend
+  useEffect(() => {
+    fetchOrders();
+    
+    // Set up auto-refresh every 30 seconds for real-time updates
+    const interval = setInterval(fetchOrders, 30000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  const fetchOrders = async () => {
+    try {
+      setLoading(true);
+      const fetchedOrders = await orderService.getOrders();
+      
+      // Check for new orders
+      if (fetchedOrders.length > previousOrderCount && previousOrderCount > 0) {
+        const newOrders = fetchedOrders.length - previousOrderCount;
+        addNotification({
+          type: 'success',
+          title: 'New Orders!',
+          message: `${newOrders} new order${newOrders > 1 ? 's' : ''} received`,
+        });
+      }
+      
+      setOrders(fetchedOrders);
+      setPreviousOrderCount(fetchedOrders.length);
+      setError(null);
+    } catch (err) {
+      setError('Failed to fetch orders');
+      console.error('Error fetching orders:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleStatusUpdate = async (orderId: number, newStatus: string) => {
+    try {
+      await orderService.updateOrderStatus(orderId, newStatus);
+      
+      // Show success notification
+      addNotification({
+        type: 'success',
+        title: 'Order Updated',
+        message: `Order status updated to ${newStatus}`,
+      });
+      
+      // Refresh orders after update
+      fetchOrders();
+    } catch (err) {
+      console.error('Error updating order status:', err);
+      addNotification({
+        type: 'error',
+        title: 'Update Failed',
+        message: 'Failed to update order status',
+      });
+    }
+  };
+
+  // Calculate metrics from real data
+  const totalOrders = orders.length;
+  const totalRevenue = orders.reduce((sum, order) => sum + order.total_amount, 0);
+  const avgTicket = totalOrders > 0 ? totalRevenue / totalOrders : 0;
+  const openOrders = orders.filter(order => 
+    ['pending', 'confirmed', 'preparing'].includes(order.status)
+  ).length;
+
   const metrics = [
-    { title: 'Total Orders', value: '128', color: 'text-blue-600' },
-    { title: 'Revenue', value: 'GH₵3,842', color: 'text-green-600' },
-    { title: 'Avg. Ticket', value: 'GH₵30.02', color: 'text-purple-600' },
-    { title: 'Open Orders', value: '17', color: 'text-orange-600' }
+    { title: 'Total Orders', value: totalOrders.toString(), color: 'text-blue-600' },
+    { title: 'Revenue', value: `GH₵${totalRevenue.toFixed(2)}`, color: 'text-green-600' },
+    { title: 'Avg. Ticket', value: `GH₵${avgTicket.toFixed(2)}`, color: 'text-purple-600' },
+    { title: 'Open Orders', value: openOrders.toString(), color: 'text-orange-600' }
   ];
 
-  const orders = [
-    {
-      id: '#1234',
-      customer: { name: 'John Doe', avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-      type: 'Dine-in',
-      status: 'Paid',
-      statusColor: 'bg-green-100 text-green-800',
-      total: 'GH₵56.40'
-    },
-    {
-      id: '#1235',
-      customer: { name: 'Jane Smith', avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-      type: 'Pickup',
-      status: 'Preparing',
-      statusColor: 'bg-yellow-100 text-yellow-800',
-      total: 'GH₵32.00'
-    },
-    {
-      id: '#1236',
-      customer: { name: 'Mike Johnson', avatar: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-      type: 'Delivery',
-      status: 'Unpaid',
-      statusColor: 'bg-red-100 text-red-800',
-      total: 'GH₵67.25'
-    },
-    {
-      id: '#1237',
-      customer: { name: 'Sarah Wilson', avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-      type: 'Dine-in',
-      status: 'Cancelled',
-      statusColor: 'bg-gray-100 text-gray-800',
-      total: 'GH₵28.75'
-    },
-    {
-      id: '#1238',
-      customer: { name: 'David Brown', avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop' },
-      type: 'Pickup',
-      status: 'Ready',
-      statusColor: 'bg-blue-100 text-blue-800',
-      total: 'GH₵45.50'
+  // Helper function to get status color
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'pending':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'confirmed':
+        return 'bg-blue-100 text-blue-800';
+      case 'preparing':
+        return 'bg-orange-100 text-orange-800';
+      case 'ready':
+        return 'bg-green-100 text-green-800';
+      case 'delivered':
+        return 'bg-green-100 text-green-800';
+      case 'cancelled':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
     }
-  ];
+  };
+
+  // Helper function to get payment status color
+  const getPaymentStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'paid':
+        return 'bg-green-100 text-green-800';
+      case 'pending':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'failed':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -76,6 +141,18 @@ const AdminOrders = () => {
           newButtonText="New Order"
           exportButtonText="Export"
         />
+        
+        {/* Refresh Button */}
+        <div className="px-6 pt-4">
+          <button
+            onClick={fetchOrders}
+            disabled={loading}
+            className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+          >
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+            <span>Refresh Orders</span>
+          </button>
+        </div>
         
         <main className="flex-1 overflow-y-auto p-6">
           {/* Header */}
@@ -117,7 +194,29 @@ const AdminOrders = () => {
             ))}
           </div>
 
+          {/* Loading State */}
+          {loading && (
+            <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading orders...</p>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && !loading && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+              <p className="text-red-600 mb-4">{error}</p>
+              <button
+                onClick={fetchOrders}
+                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+              >
+                Try Again
+              </button>
+            </div>
+          )}
+
           {/* Orders Table */}
+          {!loading && !error && (
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
@@ -144,55 +243,82 @@ const AdminOrders = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {orders.map((order, index) => (
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {order.id}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <img
-                            src={order.customer.avatar}
-                            alt={order.customer.name}
-                            className="w-8 h-8 rounded-full mr-3"
-                          />
-                          <span className="text-sm font-medium text-gray-900">
-                            {order.customer.name}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {order.type}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${order.statusColor}`}>
-                          {order.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {order.total}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <div className="flex space-x-2">
-                          <button className="text-blue-600 hover:text-blue-500">
-                            <Eye className="h-4 w-4" />
-                          </button>
-                          <button className="text-gray-600 hover:text-gray-500">
-                            <Printer className="h-4 w-4" />
-                          </button>
-                          <button className="text-green-600 hover:text-green-500">
-                            <CreditCard className="h-4 w-4" />
-                          </button>
-                          <button className="text-blue-600 hover:text-blue-500">
-                            <CheckCircle className="h-4 w-4" />
-                          </button>
-                          <button className="text-gray-600 hover:text-gray-500">
-                            <MoreHorizontal className="h-4 w-4" />
-                          </button>
-                        </div>
+                  {orders.length === 0 ? (
+                    <tr>
+                      <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
+                        No orders found
                       </td>
                     </tr>
-                  ))}
+                  ) : (
+                    orders.map((order) => (
+                      <tr key={order.id} className="hover:bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {order.order_number}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="flex items-center">
+                            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                              <span className="text-blue-600 font-medium text-sm">
+                                {order.customer?.name?.charAt(0) || 'C'}
+                              </span>
+                            </div>
+                            <div>
+                              <span className="text-sm font-medium text-gray-900">
+                                {order.customer?.name || 'Customer'}
+                              </span>
+                              <p className="text-xs text-gray-500">
+                                {order.customer?.email || 'No email'}
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <span className="capitalize">{order.order_type.replace('_', ' ')}</span>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="space-y-1">
+                            <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(order.status)}`}>
+                              {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                            </span>
+                            <br />
+                            <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getPaymentStatusColor(order.payment_status)}`}>
+                              {order.payment_status.charAt(0).toUpperCase() + order.payment_status.slice(1)}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          GH₵{order.total_amount.toFixed(2)}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                          <div className="flex space-x-2">
+                            <button className="text-blue-600 hover:text-blue-500" title="View Details">
+                              <Eye className="h-4 w-4" />
+                            </button>
+                            <button className="text-gray-600 hover:text-gray-500" title="Print Receipt">
+                              <Printer className="h-4 w-4" />
+                            </button>
+                            <button 
+                              onClick={() => handleStatusUpdate(order.id, 'preparing')}
+                              className="text-orange-600 hover:text-orange-500" 
+                              title="Mark as Preparing"
+                            >
+                              <CheckCircle className="h-4 w-4" />
+                            </button>
+                            <button 
+                              onClick={() => handleStatusUpdate(order.id, 'ready')}
+                              className="text-green-600 hover:text-green-500" 
+                              title="Mark as Ready"
+                            >
+                              <CheckCircle className="h-4 w-4" />
+                            </button>
+                            <button className="text-gray-600 hover:text-gray-500" title="More Options">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>
@@ -249,6 +375,7 @@ const AdminOrders = () => {
               </div>
             </div>
           </div>
+          )}
         </main>
       </div>
     </div>

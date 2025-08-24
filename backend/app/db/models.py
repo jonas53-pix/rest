@@ -41,10 +41,10 @@ class User(Base):
     __tablename__ = "users"
     
     id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True, nullable=False)
-    name = Column(String, nullable=False)
-    phone = Column(String, nullable=True)
-    hashed_password = Column(String, nullable=False)
+    email = Column(String(255), unique=True, index=True, nullable=False)
+    name = Column(String(255), nullable=False)
+    phone = Column(String(20), nullable=True)
+    hashed_password = Column(String(255), nullable=False)
     role = Column(Enum(UserRole), default=UserRole.CUSTOMER)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
@@ -58,9 +58,9 @@ class Category(Base):
     __tablename__ = "categories"
     
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
     description = Column(Text, nullable=True)
-    slug = Column(String, unique=True, nullable=False)
+    slug = Column(String(255), unique=True, nullable=False)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
@@ -71,10 +71,10 @@ class MenuItem(Base):
     __tablename__ = "menu_items"
     
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
     description = Column(Text, nullable=True)
     price = Column(Float, nullable=False)
-    image_url = Column(String, nullable=True)
+    image_url = Column(String(500), nullable=True)
     category_id = Column(Integer, ForeignKey("categories.id"))
     is_available = Column(Boolean, default=True)
     is_featured = Column(Boolean, default=False)
@@ -91,7 +91,7 @@ class Order(Base):
     __tablename__ = "orders"
     
     id = Column(Integer, primary_key=True, index=True)
-    order_number = Column(String, unique=True, nullable=False)
+    order_number = Column(String(50), unique=True, nullable=False)
     customer_id = Column(Integer, ForeignKey("users.id"))
     order_type = Column(Enum(OrderType), nullable=False)
     status = Column(Enum(OrderStatus), default=OrderStatus.PENDING)
@@ -102,7 +102,7 @@ class Order(Base):
     total_amount = Column(Float, nullable=False)
     delivery_address = Column(Text, nullable=True)
     delivery_notes = Column(Text, nullable=True)
-    table_number = Column(String, nullable=True)
+    table_number = Column(String(20), nullable=True)
     estimated_ready_time = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
@@ -135,9 +135,9 @@ class Reservation(Base):
     reservation_date = Column(DateTime(timezone=True), nullable=False)
     party_size = Column(Integer, nullable=False)
     status = Column(Enum(ReservationStatus), default=ReservationStatus.PENDING)
-    table_number = Column(String, nullable=True)
+    table_number = Column(String(20), nullable=True)
     special_requests = Column(Text, nullable=True)
-    occasion = Column(String, nullable=True)
+    occasion = Column(String(100), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
@@ -149,11 +149,11 @@ class Payment(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     order_id = Column(Integer, ForeignKey("orders.id"))
-    stripe_payment_intent_id = Column(String, nullable=True)
+    stripe_payment_intent_id = Column(String(255), nullable=True)
     amount = Column(Float, nullable=False)
-    currency = Column(String, default="ghs")
+    currency = Column(String(10), default="ghs")
     status = Column(Enum(PaymentStatus), default=PaymentStatus.PENDING)
-    payment_method = Column(String, nullable=True)  # card, cash, etc.
+    payment_method = Column(String(50), nullable=True)  # card, cash, etc.
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
@@ -164,10 +164,10 @@ class InventoryItem(Base):
     __tablename__ = "inventory_items"
     
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    sku = Column(String, unique=True, nullable=False)
-    category = Column(String, nullable=False)
-    supplier = Column(String, nullable=True)
+    name = Column(String(255), nullable=False)
+    sku = Column(String(100), unique=True, nullable=False)
+    category = Column(String(100), nullable=False)
+    supplier = Column(String(255), nullable=True)
     unit_cost = Column(Float, nullable=False)
     quantity_on_hand = Column(Integer, nullable=False, default=0)
     par_level = Column(Integer, nullable=False, default=0)
@@ -179,8 +179,7 @@ class Settings(Base):
     __tablename__ = "settings"
     
     id = Column(Integer, primary_key=True, index=True)
-    key = Column(String, unique=True, nullable=False)
+    key = Column(String(255), unique=True, nullable=False)
     value = Column(Text, nullable=False)
     description = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
