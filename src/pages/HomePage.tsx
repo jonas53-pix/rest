@@ -40,7 +40,7 @@ const HomePage = () => {
     {
       name: 'Kelewele',
       price: 'GH₵15',
-      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F622e4aeab3714664b16487e2af0bf48b?format=webp&width=800'
     }
   ];
 
