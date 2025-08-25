@@ -44,8 +44,68 @@ const getToken = (): string | null => {
   return localStorage.getItem('token');
 };
 
+// Mock data for development
+const mockOrders: Order[] = [
+  {
+    id: 1,
+    order_number: "ORD-001",
+    customer_id: 1,
+    order_type: "dine_in",
+    status: "pending",
+    payment_status: "pending",
+    subtotal: 45.00,
+    tax_amount: 4.50,
+    service_charge: 2.25,
+    total_amount: 51.75,
+    table_number: "5",
+    estimated_ready_time: "25 minutes",
+    created_at: new Date().toISOString(),
+    order_items: [
+      { menu_item_id: 1, quantity: 2, special_instructions: "No onions" }
+    ],
+    customer: {
+      name: "John Doe",
+      email: "john@example.com",
+      phone: "+1234567890"
+    }
+  }
+];
+
+const MOCK_MODE = true; // Set to false when backend is available
+
 export const orderService = {
   async createOrder(orderData: OrderCreate): Promise<Order> {
+    if (MOCK_MODE) {
+      // Mock implementation
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
+
+      const newOrder: Order = {
+        id: mockOrders.length + 1,
+        order_number: `ORD-${String(mockOrders.length + 1).padStart(3, '0')}`,
+        customer_id: 1,
+        order_type: orderData.order_type,
+        status: "pending",
+        payment_status: "pending",
+        subtotal: 35.00,
+        tax_amount: 3.50,
+        service_charge: 1.75,
+        total_amount: 40.25,
+        delivery_address: orderData.delivery_address,
+        delivery_notes: orderData.delivery_notes,
+        table_number: orderData.table_number,
+        estimated_ready_time: "20 minutes",
+        created_at: new Date().toISOString(),
+        order_items: orderData.items,
+        customer: {
+          name: "Mock Customer",
+          email: "customer@example.com"
+        }
+      };
+
+      mockOrders.push(newOrder);
+      return newOrder;
+    }
+
     try {
       const token = getToken();
       if (!token) {
@@ -74,6 +134,12 @@ export const orderService = {
   },
 
   async getOrders(): Promise<Order[]> {
+    if (MOCK_MODE) {
+      // Mock implementation
+      await new Promise(resolve => setTimeout(resolve, 500));
+      return [...mockOrders];
+    }
+
     try {
       const token = getToken();
       if (!token) {
@@ -98,6 +164,20 @@ export const orderService = {
   },
 
   async updateOrderStatus(orderId: number, status: string): Promise<Order> {
+    if (MOCK_MODE) {
+      // Mock implementation
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      const order = mockOrders.find(o => o.id === orderId);
+      if (!order) {
+        throw new Error('Order not found');
+      }
+
+      order.status = status;
+      order.updated_at = new Date().toISOString();
+      return { ...order };
+    }
+
     try {
       const token = getToken();
       if (!token) {
@@ -124,4 +204,3 @@ export const orderService = {
     }
   },
 };
-

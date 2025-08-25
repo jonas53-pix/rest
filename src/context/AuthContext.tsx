@@ -18,8 +18,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Use HTTPS for development backend to match frontend protocol
-const API_BASE_URL = 'https://localhost:8000/api/v1';
+// Use HTTP for development backend
+const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -53,30 +53,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/login-json`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      // Mock authentication for development
+      const mockUsers = [
+        { email: 'admin@gmail.com', password: 'admin12345', id: 1, name: 'Admin User', role: 'admin' },
+        { email: 'User@gmail.com', password: 'user12345', id: 2, name: 'Customer User', role: 'customer' },
+        { email: 'superadmin@tastybite.com', password: 'superadmin2024', id: 3, name: 'Super Admin', role: 'admin' }
+      ];
 
-      if (response.ok) {
-        const data = await response.json();
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      const user = mockUsers.find(u => u.email === email && u.password === password);
+
+      if (user) {
         const userData = {
-          id: data.user.id,
-          email: data.user.email,
-          name: data.user.name,
-          role: data.user.role
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role
         };
-        
+
+        const mockToken = `mock-token-${user.id}-${Date.now()}`;
+
         setUser(userData);
-        setToken(data.access_token);
+        setToken(mockToken);
         localStorage.setItem('user', JSON.stringify(userData));
-        localStorage.setItem('token', data.access_token);
+        localStorage.setItem('token', mockToken);
         return true;
       } else {
-        console.error('Login failed:', response.statusText);
+        console.error('Login failed: Invalid credentials');
         return false;
       }
     } catch (error) {
