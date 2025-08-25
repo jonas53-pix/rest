@@ -35,7 +35,7 @@ const HomePage = () => {
     {
       name: 'Banku with Tilapia',
       price: 'GH₵35',
-      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F75ab8e85229d43e9a231fcf4922f4f4f?format=webp&width=800'
     },
     {
       name: 'Kelewele',
