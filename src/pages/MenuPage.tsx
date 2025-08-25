@@ -75,7 +75,7 @@ const MenuPage = () => {
       name: 'Sobolo',
       description: 'Refreshing hibiscus drink with ginger and spices',
       price: 12,
-      image: 'https://images.pexels.com/photos/4099235/pexels-photo-4099235.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop',
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F4075c44e2e8045e2ae1030d4ca0c633a?format=webp&width=800',
       category: 'Drinks'
     }
   ];
