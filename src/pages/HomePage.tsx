@@ -30,7 +30,7 @@ const HomePage = () => {
     {
       name: 'Jollof Rice',
       price: 'GH₵25',
-      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F270b04aad36540d79113dded57208755?format=webp&width=800'
     },
     {
       name: 'Banku with Tilapia',
