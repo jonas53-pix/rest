@@ -143,8 +143,8 @@ const CheckoutPage = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                alt="Seafood dish"
+                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                alt="Delicious meal"
                 className="rounded-lg shadow-lg"
               />
             </div>

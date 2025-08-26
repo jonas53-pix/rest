@@ -30,17 +30,17 @@ const HomePage = () => {
     {
       name: 'Jollof Rice',
       price: 'GH₵25',
-      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F270b04aad36540d79113dded57208755?format=webp&width=800'
+      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Banku with Tilapia',
       price: 'GH₵35',
-      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F75ab8e85229d43e9a231fcf4922f4f4f?format=webp&width=800'
+      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     },
     {
       name: 'Kelewele',
       price: 'GH₵15',
-      image: 'https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2F622e4aeab3714664b16487e2af0bf48b?format=webp&width=800'
+      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
     }
   ];
 
@@ -93,8 +93,8 @@ const HomePage = () => {
             </div>
             <div className="relative">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Faab002d11bac4e6d92d14db9aa5e95bc%2Fd2776700ae2f4b2792b6ece4c3f58f5e?format=webp&width=800"
-                alt="Traditional meal served on banana leaf with rice, meat, noodles, sausages, and fresh vegetables"
+                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                alt="Delicious traditional meal"
                 className="rounded-lg shadow-2xl"
               />
             </div>

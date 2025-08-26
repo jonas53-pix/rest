@@ -25,7 +25,7 @@ const AdminPOS = () => {
       name: 'Jollof Rice',
       description: 'Aromatic rice • 450 cal',
       price: 25,
-      image: 'https://images.pexels.com/photos/15146310/pexels-photo-15146310.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Rice Dishes'
     },
     {
@@ -41,7 +41,7 @@ const AdminPOS = () => {
       name: 'Groundnut Soup',
       description: 'Rich peanut soup • 320 cal',
       price: 18,
-      image: 'https://images.pexels.com/photos/12737543/pexels-photo-12737543.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
       category: 'Soups'
     },
     {
