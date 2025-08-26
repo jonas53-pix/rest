@@ -40,7 +40,7 @@ const HomePage = () => {
     {
       name: 'Kelewele',
       price: 'GH₵15',
-      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+      image: '/Kelewele _ Fried Plantain Recipe.jpeg'
     }
   ];
 
