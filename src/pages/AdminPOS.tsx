@@ -57,7 +57,7 @@ const AdminPOS = () => {
       name: 'Kelewele',
       description: 'Spiced plantain • 180 cal',
       price: 15,
-      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop',
+      image: '/Kelewele _ Fried Plantain Recipe.jpeg',
       category: 'Starters'
     },
     {
